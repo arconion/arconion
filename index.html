@@ -41,6 +41,7 @@ body {
     margin-bottom: 1em;
     position: relative;
     z-index: 1;
+    transition: transform 0.3s ease; /* Add transition for smoother animation */
 }
 .colored-link {
     color: #ff0000; 
@@ -84,6 +85,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
+    transition: transform 0.3s ease; /* Add transition for smoother animation */
 }
 
 .card__heading {
@@ -272,6 +274,21 @@ font-size: 16px
   font-size: 12px;
   margin-right: 8px;
 }
+
+
+.card:hover {
+            transform: translateY(-5px); /* Move the container up by 5 pixels on hover */
+        }
+
+
+h1:hover {
+        transform: translate3d(0, -10px, 22px);
+        color: #d40000;
+        transition: all 0.5s ease-in-out;
+      
+     
+      }
+
     </style>
 </head>
 
@@ -339,9 +356,10 @@ font-size: 16px
                 </p>
             </div>
             <div class="card">
-                <h2 class="card__heading"></h2>
-                <img class="card__image" src="" alt="Image">
+                <h2 class="card__heading">zoin</h2>
+                <img class="card__image" src="https://pomf2.lain.la/f/jhce6xgf.webp" alt="Image">
                 <p class="card__description">
+                    rip zion retarded idiot making fun of us disrespctful and mocking us
 
                 </p>
 
