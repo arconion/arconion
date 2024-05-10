@@ -325,14 +325,64 @@ ul {
 
 
 
+/* Navigation Bar styles */
+.navbar {
+            background-color: black;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 999;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 20px;
+        }
+
+        .navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar li a:hover {
+            background-color: #555;
+        }
+
 
 
 </style>
 </head>
 
 <body>
-
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">hoa</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="shop.html">Shop</a></li>
+        </ul>
+    </nav>
+    <br>
+    <br>
+    <br>
 <main class="main flow">
+    
   <h1 class="main__heading">TEAM</h1>
   <div class="home-button">
     <a href="index.html">HOME</a>
