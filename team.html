@@ -1,552 +1,151 @@
 <!DOCTYPE html>
-<html>
-
-
-<!-- Mirrored from 2226.lol/team/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 May 2024 11:59:07 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://pomf2.lain.la/f/ijqovco6.png" type="image/png">
-    <meta property="og:title" content="Violate - Team"/>
-    <meta property="og:description" content="Empowering justice, enforcing law."/>
-    <meta
-      property="og:image"
-      content="../fbi.png"
-    />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Violate - Team</title>
-
-<style>
+    <meta name="description" content="Violate Team.">
+    <meta name="keywords" content="guns.lol, doxing, nuking, Telegram group, discord">
+    <meta name="author" content="Violate">
+    <style>
         body {
-    height: 100%;
-    display: grid;
-    place-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.2;
-    background-color: #000; /* Set background to black */
-    color: #ddd;
-    margin: 0;
-    padding: 0;
-    overflow: visible; /* Disable scrolling */
-}
-
-
-
-
-
-
-/* Navigation Bar */
-.navbar {
-            background-color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+        }
+        header, nav {
+            background-color: #333;
             padding: 20px 0;
         }
-
-        .navbar ul {
+        nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
-            overflow: hidden;
             display: flex;
             justify-content: center;
         }
-
-        .navbar li {
+        nav ul li {
             margin: 0 20px;
         }
-
-        .navbar li a {
-            display: block;
-            color: white;
-            text-align: center;
-            text-transform: uppercase;
+        nav ul li a {
             text-decoration: none;
-            font-weight: bold;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            color: #f5f5f5;
+            font-size: 1.2em;
+        }
+        nav ul li a:hover {
+            color: #00ccff;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .team-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .member {
+            background-color: #444;
+            border-radius: 10px;
+            padding: 30px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+            text-align: center;
+        }
+        .member:hover {
+            transform: translateY(-10px);
+        }
+        .member img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+        .member h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .member a {
+            text-decoration: none;
+            color: #00ccff;
+            font-size: 1.4em;
+        }
+        .member a:hover {
+            color: #0099cc;
         }
 
-        .navbar li a:hover {
-            background-color: #555;
+
+
+
+
+
+
+
+        .uwu{
+            font-size: 400%;
+            text-align: center;
         }
-.cards__card {
-    background-color: #000; /* Set card background to black */
-    border-color: #333; /* Darker border color */
-}
-
-.cards__card:hover {
-    --lightness: 10%; /* Darken the card on hover */
-}
-
-.card__heading {
-    color: #fff; /* Set heading color to white */
-}
-
-.card__price {
-    color: #fff; /* Set price color to white */
-}
-
-.cta {
-    color: #fff;
-    background-color: #0d0d0d; /* Dark gray */
-    box-shadow: 0 0 0 1px hsl(0, 0%, 0%);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.main {
-  padding: 2em 1em; /* Adjust padding for smaller screens */
-        text-align: center;
-}
-
-.main__heading {
-        font-size: 5vw;
-        font-family: "Josefin Sans", sans-serif;
-        margin: 0;
-        padding-bottom: 0.5rem;
-        letter-spacing: 0.5rem;
-        color: #ffffff;
-        transition: all 0.3s ease;
-        z-index: 3;
-}
-
-.cards__inner {
-  gap: 1.5em; /* Reduce the gap between cards on smaller screens */
-}
-
-.card {
-  flex: 1 1 100%; /* Make each card full width on small screens */
-  max-width: 100%; /* Ensure cards don't exceed the screen width */
-}
-
-.card__heading {
-  font-size: 1.2em; /* Increase heading font size for better readability */
-}
-
-.card__price {
-  font-size: 1.5em; /* Increase price font size for better visibility */
-}
-
-
-
-@media only screen and (max-width: 767px) {
-  .main {
-    padding: 1em; /* Further reduce padding for smaller screens */
-  }
-
-  .main__heading {
-    font-size: 1.5em; /* Adjust heading font size for smaller screens */
-  }
-
-  .cards__inner {
-    flex-direction: column; /* Stack cards vertically on smaller screens */
-    gap: 1em; /* Reduce the gap between cards on smaller screens */
-  }
-
-  .card {
-    flex: 1 1 100%; /* Make each card full width on small screens */
-    max-width: 100%; /* Ensure cards don't exceed the screen width */
-  }
-}
-
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700;800;900&amp;display=swap");
-
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html,
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "ROBOTO", sans-serif;
-}
-
-ul {
-  list-style: none;
-}
-
-.main {
-  max-width: 75rem;
-  padding: 3em 1.5em;
-}
-
-.cards {
-  position: relative;
-}
-
-.cards__inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5em;
-}
-
-.card {
-  --flow-space: 0.5em;
-  --hsl: var(--hue), var(--saturation), var(--lightness);
-  flex: 1 1 14rem;
-  padding: 1.5em 2em;
-  display: grid;
-  grid-template-rows: auto auto auto 1fr;
-  align-items: start;
-  gap: 1.25em;
-  color: #eceff1;
-  background-color: #150000;
-  border: 1px solid #eceff133;
-  border-radius: 15px;
-}
-
-.card:nth-child(1) {
-  --hue: 45;
-  --saturation: 100%;
-  --lightness: 50%;
-}
-
-.card:nth-child(2) {
-  --hue: 200;
-  --saturation: 100%;
-  --lightness: 50%;
-}
-
-.card:nth-child(3) {
-  --hue: 200;
-  --saturation: 100%;
-  --lightness: 50%;
-}
-
-.card:nth-child(4) {--hue: 100;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(5) {--hue: 200;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(6) {--hue: 25;--saturation: 100%;--lightness: 35%;}
-
-.card:nth-child(7) {--hue: 25;--saturation: 100%;--lightness: 35%;}
-
-.card:nth-child(8) {--hue: 0;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(9) {--hue: 0;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(10) {--hue: 0;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(11) {--hue: 0;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(12) {--hue: 0;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(13) {--hue: 0;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(14) {--hue: 0;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(15) {--hue: 0;--saturation: 100%;--lightness: 50%;}
-
-.card:nth-child(16) {--hue: 0;--saturation: 100%;--lightness: 50%;}
-
-
-.card__bullets {
-  line-height: 1.4;
-}
-
-.card__bullets li::before {
-  display: inline-block;
-  margin-right: 1ch;
-}
-
-.card__heading {
-  font-size: 1.05em;
-  font-weight: 600;
-}
-
-.card__price {
-  font-size: 1.75em;
-  font-weight: 700;
-}
-
-.flow > * + * {
-  margin-top: var(--flow-space, 1.25em);
-}
-
-.cta {
-  display: block;
-  align-self: end;
-  margin: 1em 0 0.5em 0;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #0d0d0d;
-  padding: 0.7em;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-.home {
-  display: block;
-  align-self: end;
-  margin: 1em 0 0.5em 0;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #0d0d0d;
-  padding: 0.7em;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  opacity: 0.4;
-  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
-}
-
-
-
-.home:hover {
-  transform: scale(1.05);
-  opacity: 0.8;
-  background-color: #ff0000;
-}
-
-
-
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  user-select: none;
-  opacity: var(--opacity, 0);
-  -webkit-mask: radial-gradient(
-    25rem 25rem at var(--x) var(--y),
-    #000 1%,
-    transparent 50%
-  );
-  mask: radial-gradient(
-    25rem 25rem at var(--x) var(--y),
-    #000 1%,
-    transparent 50%
-  );
-  transition: 400ms mask ease;
-  will-change: mask;
-}
-
-.overlay .card {
-  background-color: hsla(var(--hsl), 0.15);
-  border-color: hsla(var(--hsl), 1);
-  box-shadow: 0 0 0 1px inset hsl(var(--hsl));
-}
-
-.overlay .cta {
-  display: block;
-  grid-row: -1;
-  width: 100%;
-  background-color: hsl(var(--hsl));
-  box-shadow: 0 0 0 1px hsl(var(--hsl));
-}
-
-:not(.overlay) > .card {
-  transition: 400ms background ease;
-  will-change: background;
-}
-
-:not(.overlay) > .card:hover {
-  --lightness: 10%;
-}
-
-
-</style>
+    </style>
 </head>
-
 <body>
-    <nav class="navbar">
+    <header>
+        <h1 class="uwu">Violate</h1>
+    </header>
+    <nav>
         <ul>
-            <li><a href="index.html">hoa</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="team.html">Team</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="game.html">Game</a></li>
-            <li><a href="links.html">Links</a></li>
-            <li><a href="torrent.html">Torrent</a></li>
+            <li><a href="victims.html">Victims</a></li>
             <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Conntact</a></li>
         </ul>
     </nav>
-    <br>
-    <br>
-    <br>
-<main class="main flow">
-    
-  <h1 class="main__heading">TEAM</h1>
-  
-  <div class="main__cards cards">
-    <div class="cards__inner">
-      <div class="cards__card card">
-        <h2 class="card__heading">Founder</h2>
-        <p class="card__price">Oz</p>
-        <ul role="list" class="card__bullets flow">
-<li></li>
-        </ul>
-        <a href="https://guns.lol/ooz" target="_blank" class="card__cta cta">guns.lol</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Doxer</h2>
-        <p class="card__price">limitless</p>
-        <ul role="list" class="card__bullets flow">
-<li>"Hey, where you headed? Don't be in such a rush! You won't be able to hide from me!"</li>
-        </ul>
-        <a href="https://doxbin.com/user/mari_xd" target="_blank" class="card__cta cta">Doxbin</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Swatter / Doxer</h2>
-        <p class="card__price">DevilBreak</p>
-        <ul role="list" class="card__bullets flow">
-<li>"Illegal businesses control America."</li>
-        </ul>
-        <a href="https://doxbin.com/user/Italy" target="_blank" class="card__cta cta">Doxbin</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Troller</h2>
-        <p class="card__price">boogie man</p>
-        <ul role="list" class="card__bullets flow">
-<li>"example"</li>
-        </ul>
-        <a href="" target="_blank" class="card__cta cta">idk</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Doxer</h2>
-        <p class="card__price">kilim</p>
-        <ul role="list" class="card__bullets flow">
-<li>"flowers are blooming in antartica"</li>
-        </ul>
-        <a href="" target="_blank" class="card__cta cta">Doxbin</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Faud / Artist</h2>
-        <p class="card__price">AQMortis</p>
-        <ul role="list" class="card__bullets flow">
-          <li>"nothing"</li>
-        </ul>
-        <a href="" target="_blank" class="card__cta cta">idk</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Hacker</h2>
-        <p class="card__price">Prophet</p>
-        <ul role="list" class="card__bullets flow">
-<li>"Undercover federal agent"</li>
-        </ul>
-        <a href="" target="_blank" class="card__cta cta">idk</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">idk</h2>
-        <p class="card__price">Mars</p>
-        <ul role="list" class="card__bullets flow">
-        </ul>
-        <a href="" target="_blank" class="card__cta cta">idk</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Cyber</h2>
-        <p class="card__price">pgp</p>
-        <ul role="list" class="card__bullets flow">
-<li></li>
-        </ul>
-        <a href="" target="_blank" class="card__cta cta">idk</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Programmer</h2>
-        <p class="card__price">veni</p>
-        <ul role="list" class="card__bullets flow">
-<li></li>
-        </ul>
-        <a href="https://haxerman1.github.io/my-bio/" target="_blank" class="card__cta cta">Bio</a>
-      </div>
-
-     
-
-
-
-
-
-    
-    <div class="overlay cards__inner"></div>
-  </div>
-</main>
-
-<script>
-console.clear();
-
-const cardsContainer = document.querySelector(".cards");
-const cardsContainerInner = document.querySelector(".cards__inner");
-const cards = Array.from(document.querySelectorAll(".card"));
-const overlay = document.querySelector(".overlay");
-
-const applyOverlayMask = (e) => {
-  const overlayEl = e.currentTarget;
-  const x = e.pageX - cardsContainer.offsetLeft;
-  const y = e.pageY - cardsContainer.offsetTop;
-
-  overlayEl.style = `--opacity: 1; --x: ${x}px; --y:${y}px;`;
-};
-
-const createOverlayCta = (overlayCard, ctaEl) => {
-  const overlayCta = document.createElement("div");
-  overlayCta.classList.add("cta");
-  overlayCta.textContent = ctaEl.textContent;
-  overlayCta.setAttribute("aria-hidden", true);
-  overlayCard.append(overlayCta);
-};
-
-const observer = new ResizeObserver((entries) => {
-  entries.forEach((entry) => {
-    const cardIndex = cards.indexOf(entry.target);
-    let width = entry.borderBoxSize[0].inlineSize;
-    let height = entry.borderBoxSize[0].blockSize;
-
-    if (cardIndex >= 0) {
-      overlay.children[cardIndex].style.width = `${width}px`;
-      overlay.children[cardIndex].style.height = `${height}px`;
-    }
-  });
-});
-
-const initOverlayCard = (cardEl) => {
-  const overlayCard = document.createElement("div");
-  overlayCard.classList.add("card");
-  createOverlayCta(overlayCard, cardEl.lastElementChild);
-  overlay.append(overlayCard);
-  observer.observe(cardEl);
-};
-
-cards.forEach(initOverlayCard);
-document.body.addEventListener("pointermove", applyOverlayMask);
-</script>
-
+    <main>
+        <h2>Team Members</h2>
+        <section class="team-links">
+            <div class="member">
+                <img src="https://files.offshore.cat/QLSzgSNg.png" alt="Avatar of Oz">
+                <h2>Oz</h2>
+                <a href="https://guns.lol/carefull" target="_blank" rel="noopener noreferrer">guns.lol</a>
+            </div>
+            <div class="member">
+                <img src="https://files.offshore.cat/OmEWS1s1.webp" alt="Avatar of lak">
+                <h2>limitless</h2>
+                <p>"Hey, where you headed? Don't be in such a rush! You won't be able to hide from me!"</p>
+                <a href="" target="_blank" rel="noopener noreferrer">discord</a>
+            </div>
+            <div class="member">
+                <img src="https://files.offshore.cat/TWHQCrHD.png" alt="Avatar of Larped">
+                <h2>Larped</h2>
+                <a href="https://guns.lol/Lost_Money" target="_blank" rel="noopener noreferrer">guns.lol</a>
+            </div>
+            <div class="member">
+                <img src="https://files.offshore.cat/AsExrTLm.jpg" alt="Avatar of Luna">
+                <h2>Luna</h2>
+                <a href="https://guns.lol/aqmortis" target="_blank" rel="noopener noreferrer">guns.lol</a>
+            </div>
+            <div class="member">
+                <img src="https://files.offshore.cat/MUIRMJr1.webp" alt="Avatar of kilim">
+                <h2>kilim</h2>
+                <p>"flowers are blooming in antartica"</p>
+                <a href="" target="_blank" rel="noopener noreferrer">doxbin</a>
+            </div>
+            <div class="member">
+                <img src="https://files.offshore.cat/UxnLhm2q.jpg" alt="Avatar of Fivio Foreign">
+                <h2>Fivio Foreign</h2>
+                <a href="https://guns.lol/fivioforeign" target="_blank" rel="noopener noreferrer">guns.lol</a>
+            </div>
+            <div class="member">
+                <img src="https://files.offshore.cat/YOezF1AO.webp" alt="Avatar of lak">
+                <h2>lak</h2>
+                <a href="https://guns.lol/federal" target="_blank" rel="noopener noreferrer">guns.lol</a>
+            </div>
+            
+        </section>
+    </main>
 </body>
-
-
-<!-- Mirrored from 2226.lol/team/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 May 2024 11:59:07 GMT -->
 </html>

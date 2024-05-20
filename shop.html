@@ -3,255 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
+    <title>Violate - Shop</title>
+    <meta name="description" content="Violate Shop.">
+    <meta name="keywords" content="guns.lol, doxing, nuking, Telegram group, discord">
+    <meta name="author" content="Violate">
     <style>
-        /* Your existing styles */
-body {
-    font-size: 16px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    color: #ddd;
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    min-height: 100vh;
-    background-color: black;
-    position: relative;
-}
-
-/* Your existing styles */
-
-/* New styles for payment options */
-.payment-options {
-    margin-top: 50px;
-    text-align: center;
-}
-
-.payment-option {
-    display: inline-block;
-    margin: 0 20px;
-}
-
-.payment-option img {
-    width: 50px; /* Adjust the size as needed */
-    height: auto;
-    margin-bottom: 10px;
-}
-
-
-
-
-
-.navbar {
-    background-color: black;
-    padding: 20px 0;
-}
-
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-}
-
-.navbar li {
-    margin: 0 20px;
-}
-
-.navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.navbar li a:hover {
-    background-color: #555;
-}
-
-.main {
-    padding: 2em 1em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.main__heading {
-    font-size: 4em;
-    color: #ffffff;
-    margin-bottom: 1em;
-    transition: transform 0.3s ease; /* Add transition for smoother animation */
-}
-
-.cards__inner {
-    display: grid;
-    justify-content: center;
-    align-items: start;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-flow: dense;
-    padding: 0 1em;
-    gap: 1.5em;
-}
-
-.card {
-    max-height: 500px;
-    min-height: 500px;
-    max-width: 500px;
-    min-width: 300px;
-    background-color: rgba(0, 0, 0, 0.8);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    overflow: hidden;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: transform 0.3s ease; /* Add transition for smoother animation */
-}
-
-
-.card__heading {
-    font-size: 1.2em;
-    color: #ffffff;
-    text-align: center;
-    margin: 10px 0;
-    flex-grow: 0;
-}
-
-.card__image {
-    width: 300px;
-    height: 300px;
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    border-radius: 15px 15px 0 0;
-    margin: 0 auto;
-}
-
-.card__description {
-    color: #ffffff;
-    padding: 5px 20px;
-    margin-top: auto;
-    text-align: center;
-    position: relative;
-    width: 85%;
-}
-
-.card__button {
-    background-color: #ff0000;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.card__button:hover {
-    background-color: #d40000;
-}
-
-.footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: black;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-
-
-
-h1:hover {
-        transform: translate3d(0, -10px, 22px);
-        color: #d40000;
-        transition: all 0.5s ease-in-out;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #f5f5f5;
+        }
+        header, nav {
+            background-color: #333;
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #f5f5f5;
+            font-size: 1.2em;
+        }
+        nav ul li a:hover {
+            color: #00ccff;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        .shop-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .product {
+            background-color: #444;
+            border-radius: 10px;
+            padding: 30px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+            text-align: center;
+            margin: 10px;
+        }
+        .product:hover {
+            transform: translateY(-10px);
+        }
+        .product img {
+            border-radius: 0;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+        }
+        .product h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .product p {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        .product a {
+            text-decoration: none;
+            color: #00ccff;
+            font-size: 1.4em;
+        }
+        .product a:hover {
+            color: #0099cc;
+        }
 
 
 
 
 
-.card:hover {
-            transform: translateY(-5px); /* Move the container up by 5 pixels on hover       <img class="hat" src="hat3.png" alt="Hat">   */
+        .uwu{
+            font-size: 400%;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
+    <header>
+        <h1 class="uwu">Violate</h1>
+    </header>
+    <nav>
         <ul>
-            <li><a href="index.html">hoa</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="team.html">Team</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="game.html">Game</a></li>
-            <li><a href="links.html">Links</a></li>
-            <li><a href="torrent.html">Torrent</a></li>
+            <li><a href="victims.html">Victims</a></li>
             <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
-
-    <main class="main">
-        <h1 class="main__heading">Shop</h1>
-        <div class="cards__inner">
-            <div class="card">
-                <h2 class="card__heading">Disney+ Accounts</h2>
-                <img class="card__image" src="disney.png" alt="Product 1">
-                <p class="card__description"></p>
-                <button class="card__button">$1</button>
+    <main>
+        <h2>Shop</h2>
+        <section class="shop-section">
+            <div class="product">
+                <img src="https://files.offshore.cat/QEiTB7ul.png" alt="Product 1">
+                <h2>Disney+ account </h2>
+                <p>1 Account = 1$</p>
+                <a href="https://getsession.org/" target="_blank" rel="noopener noreferrer">Buy Now</a>
             </div>
-            <div class="card">
-                <h2 class="card__heading">Crunchyroll Accounts</h2>
-                <img class="card__image" src="crunchyrol.png" alt="Product 2">
-                <p class="card__description"></p>
-                <button class="card__button">$1</button>
+            <div class="product">
+                <img src="https://files.offshore.cat/p8r9ga9U.png" alt="Product 2">
+                <h2>Netflix account</h2>
+                <p>1 Account = 1$</p>
+                <a href="https://getsession.org/" target="_blank" rel="noopener noreferrer">Buy Now</a>
             </div>
-            <div class="card">
-                <h2 class="card__heading">Netflix Accounts</h2>
-                <img class="card__image" src="netflix.png" alt="Product 3">
-                <p class="card__description"></p>
-                <button class="card__button">$1</button>
+            <div class="product">
+                <img src="https://files.offshore.cat/6zIh1lYB.png" alt="Product 2">
+                <h2>Crunchyroll account</h2>
+                <p>1 Account = 1$</p>
+                <a href="https://getsession.org/" target="_blank" rel="noopener noreferrer">Buy Now</a>
+            </div>
+            <div class="product">
+                <img src="https://files.offshore.cat/bBUysoHj.png" alt="Product 2">
+                <h2>cc's</h2>
+                <p>out of stock</p>
+                <a href="https://getsession.org/" target="_blank" rel="noopener noreferrer">Buy Now</a>
             </div>
             <!-- Add more products as needed -->
-        </div>
-        
-        <section class="payment-options">
-            <h2>Payment options</h2>
-            <div class="payment-option">
-                <img src="monero-xmr-logo.png" alt="Monero">
-                <p>Monero</p>
-            </div>
-            <div class="payment-option">
-                <img src="btc.png" alt="Bitcoin">
-                <p>Bitcoin</p>
-            </div>
-            <div class="payment-option">
-                <img src="eth.png" alt="Ethereum">
-                <p>Ethereum</p>
-            </div>
-            <div class="payment-option">
-                <img src="PayPal.png" alt="PayPal">
-                <p>PayPal</p>
-            </div>
-            <div class="payment-option">
-                <img src="cashapp.png" alt="Cash App">
-                <p>Cash App</p>
-            </div>
-            <!-- Add more payment options as needed -->
         </section>
     </main>
-
-    <footer class="footer">
-        <!-- Footer content here -->
-    </footer>
 </body>
 </html>
