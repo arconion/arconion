@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careful dox Formatter</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2b2b2b; /* Dark background color */
+            color: #ffffff; /* Text color */
+        }
+        .container {
+            display: flex;
+            max-width: 100%;
+        }
+        .input-container {
+            flex: 1;
+            border-right: 1px solid #444; /* Darker border color */
+            padding: 20px;
+            margin-right: 10px; /* Added margin to push the container to the left */
+        }
+        .output-container {
+            flex: 2; /* Increased the width */
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h3 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+        .ascii-box {
+            font-family: monospace;
+            white-space: pre;
+            background: #1e1e1e; /* Darker background color */
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #444; /* Darker border color */
+        }
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        .input-field label {
+            margin-bottom: 5px;
+        }
+        .input-field input {
+            padding: 8px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            background-color: #3b3b3b; /* Darker background color */
+            color: #ffffff; /* White text color */
+        }
+        .btn {
+            padding: 10px 15px;
+            background-color: #00ccff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #008caf;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 30%;
+            height: auto;
+            padding-bottom: 20px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-container">
+            <img src="careful.jpg" alt="Creator's Logo" class="logo">
+            <h1>Careful dox Formatter</h1>
+            <h3>Violate</h3>
+            <a href="https://discord.gg/6V6wFQGywR" style="color: #00ccff;" target="_blank"><h3>Discord Server</h3></a>
+            <form id="infoForm">
+                <div class="input-field">
+                    <label for="description">Description / Reason</label>
+                    <textarea id="description" name="description" rows="8" style="background-color: #3b3b3b; color: #ffffff; border-color: #000000;" required></textarea>
+                </div>
+                <div class="input-field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="input-field">
+                    <label for="alias">Alias</label>
+                    <input type="text" id="alias" name="alias" required>
+                </div>
+                <div class="input-field">
+                    <label for="dob">Date Of Birth</label>
+                    <input type="text" id="dob" name="dob" required>
+                </div>
+                <div class="input-field">
+                    <label for="age">Age</label>
+                    <input type="text" id="age" name="age" required>
+                </div>
+                <div class="input-field">
+                    <label for="ssn">SSN</label>
+                    <input type="text" id="ssn" name="ssn" required>
+                </div>
+                <div class="input-field">
+                    <label for="dln">DLN</label>
+                    <input type="text" id="dln" name="dln" required>
+                </div>
+                <div class="input-field">
+                    <label for="sex">Gender</label>
+                    <input type="text" id="sex" name="sex" required>
+                </div>  
+                <div class="input-field">
+                    <label for="race">Race</label>
+                    <input type="text" id="race" name="race" required>
+                </div>  
+                <div class="input-field">
+                    <label for="height">Height</label>
+                    <input type="text" id="height" name="height" required>
+                </div>  
+                <div class="input-field">
+                    <label for="weight">Weight</label>
+                    <input type="text" id="weight" name="weight" required>
+                </div>
+                <div class="input-field">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+                <div class="input-field">
+                    <label for="oldaddress">Old Address</label>
+                    <input type="text" id="oldaddress" name="oldaddress" required>
+                </div>
+                <div class="input-field">
+                    <label for="oldaddress2">Old Address Nr.2</label>
+                    <input type="text" id="oldaddress2" name="oldaddress2" required>
+                </div>
+                <div class="input-field">
+                    <label for="oldaddress3">Old Address Nr.3</label>
+                    <input type="text" id="oldaddress3" name="oldaddress3" required>
+                </div>
+                <div class="input-field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-field">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                <div class="input-field">
+                    <label for="ip">IP</label>
+                    <input type="text" id="ip" name="ip" required>
+                </div>
+                <div class="input-field">
+                    <label for="ip2">IP</label>
+                    <input type="text" id="ip2" name="ip2" required>
+                </div>
+                <div class="input-field">
+                    <label for="ip3">IP</label>
+                    <input type="text" id="ip3" name="ip3" required>
+                </div>
+                <div class="input-field">
+                    <label for="img">Selfies</label>
+                    <input type="text" id="img" name="img" required>
+                </div>
+
+
+                <p>Relative</p>
+
+
+                <div class="input-field">
+                    <label for="namerelative1">Name</label>
+                    <input type="text" id="namerelative1" name="namerelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="aliasrelative1">Alias</label>
+                    <input type="text" id="aliasrelative1" name="aliasrelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="dobrelative1">Date Of Birth</label>
+                    <input type="text" id="dobrelative1" name="dobrelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="agerelative1">Age</label>
+                    <input type="text" id="agerelative1" name="agerelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="ssnrelative1">SSN</label>
+                    <input type="text" id="ssnrelative1" name="ssnrelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="dlnrelative1">DLN</label>
+                    <input type="text" id="dlnrelative1" name="dlnrelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="sexrelative1">Gender</label>
+                    <input type="text" id="sexrelative1" name="sexrelative1" required>
+                </div>  
+                <div class="input-field">
+                    <label for="racerelative1">Race</label>
+                    <input type="text" id="racerelative1" name="racerelative1" required>
+                </div>  
+                <div class="input-field">
+                    <label for="heightrelative1">Height</label>
+                    <input type="text" id="heightrelative1" name="heightrelative1" required>
+                </div>  
+                <div class="input-field">
+                    <label for="weightrelative1">Weight</label>
+                    <input type="text" id="weightrelative1" name="weightrelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="addressrelative1">Address</label>
+                    <input type="text" id="addressrelative1" name="addressrelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="oldaddressrelative1">Old Address</label>
+                    <input type="text" id="oldaddressrelative1" name="oldaddressrelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="oldaddress2relative1">Old Address Nr.2</label>
+                    <input type="text" id="oldaddress2relative1" name="oldaddress2relative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="oldaddress3relative1">Old Address Nr.3</label>
+                    <input type="text" id="oldaddress3relative1" name="oldaddress3relative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="emailrelative1">Email</label>
+                    <input type="email" id="emailrelative1" name="emailrelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="phonerelative1">Phone Number</label>
+                    <input type="text" id="phonerelative1" name="phonerelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="iprelative1">IP</label>
+                    <input type="text" id="iprelative1" name="iprelative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="ip2relative1">IP</label>
+                    <input type="text" id="ip2relative1" name="ip2relative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="ip3relative1">IP</label>
+                    <input type="text" id="ip3relative1" name="ip3relative1" required>
+                </div>
+                <div class="input-field">
+                    <label for="imgrelative1">Selfies</label>
+                    <input type="text" id="imgrelative1" name="imgrelative1" required>
+                </div>
+
+
+                <p>Realytive Nr.2</p>
+
+
+                <div class="input-field">
+                    <label for="namerelative2">Name</label>
+                    <input type="text" id="namerelative2" name="namerelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="aliasrelative2">Alias</label>
+                    <input type="text" id="aliasrelative2" name="aliasrelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="dobrelative2">Date Of Birth</label>
+                    <input type="text" id="dobrelative2" name="dobrelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="agerelative2">Age</label>
+                    <input type="text" id="agerelative2" name="agerelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="ssnrelative2">SSN</label>
+                    <input type="text" id="ssnrelative2" name="ssnrelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="dlnrelative2">DLN</label>
+                    <input type="text" id="dlnrelative2" name="dlnrelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="sexrelative2">Gender</label>
+                    <input type="text" id="sexrelative2" name="sexrelative2" required>
+                </div>  
+                <div class="input-field">
+                    <label for="racerelative2">Race</label>
+                    <input type="text" id="racerelative2" name="racerelative2" required>
+                </div>  
+                <div class="input-field">
+                    <label for="heightrelative2">Height</label>
+                    <input type="text" id="heightrelative2" name="heightrelative2" required>
+                </div>  
+                <div class="input-field">
+                    <label for="weightrelative2">Weight</label>
+                    <input type="text" id="weightrelative2" name="weightrelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="addressrelative2">Address</label>
+                    <input type="text" id="addressrelative2" name="addressrelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="oldaddressrelative2">Old Address</label>
+                    <input type="text" id="oldaddressrelative2" name="oldaddressrelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="oldaddress2relative2">Old Address Nr.2</label>
+                    <input type="text" id="oldaddress2relative2" name="oldaddress2relative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="oldaddress3relative2">Old Address Nr.3</label>
+                    <input type="text" id="oldaddress3relative2" name="oldaddress3relative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="emailrelative2">Email</label>
+                    <input type="email" id="emailrelative2" name="emailrelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="phonerelative2">Phone Number</label>
+                    <input type="text" id="phonerelative2" name="phonerelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="iprelative2">IP</label>
+                    <input type="text" id="iprelative2" name="iprelative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="ip2relative2">IP</label>
+                    <input type="text" id="ip2relative2" name="ip2relative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="ip3relative2">IP</label>
+                    <input type="text" id="ip3relative2" name="ip3relative2" required>
+                </div>
+                <div class="input-field">
+                    <label for="imgrelative2">Selfies</label>
+                    <input type="text" id="imgrelative2" name="imgrelative2" required>
+                </div>
+
+                <p>Socials</p>
+
+
+                <div class="input-field">
+                    <label for="insta">Instagram</label>
+                    <input type="text" id="insta" name="insta" required>
+                </div>
+                <div class="input-field">
+                    <label for="facebook">Facebook</label>
+                    <input type="text" id="facebook" name="facebook" required>
+                </div>
+                <div class="input-field">
+                    <label for="twitter">Twitter</label>
+                    <input type="text" id="twitter" name="twitter" required>
+                </div>
+                <div class="input-field">
+                    <label for="discord">Discord</label>
+                    <input type="text" id="discord" name="discord" required>
+                </div>
+            
+                <div class="input-field">
+                    <label for="credits">Credits</label>
+                    <textarea id="credits" name="credits" rows="8" style="background-color: #3b3b3b; color: #ffffff; border-color: #000000;" required></textarea>
+                </div>    
+                
+                <button type="button" class="btn" onclick="generateAscii()">Create</button>
+            </form>
+        </div>
+        <div class="output-container">
+            <div class="ascii-box" id="asciiOutput">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function generateAscii() {
+
+            const description = document.getElementById('description').value;
+            const name = document.getElementById('name').value;
+            const alias = document.getElementById('alias').value;
+            const dob = document.getElementById('dob').value;
+            const age = document.getElementById('age').value;
+            const ssn = document.getElementById('ssn').value;
+            const dln = document.getElementById('dln').value;
+            const sex = document.getElementById('sex').value;
+            const race = document.getElementById('race').value;
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+            const address = document.getElementById('address').value;
+            const oldaddress = document.getElementById('oldaddress').value;
+            const oldaddress2 = document.getElementById('oldaddress2').value;
+            const oldaddress3 = document.getElementById('oldaddress3').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const ip = document.getElementById('ip').value;
+            const ip2 = document.getElementById('ip2').value;
+            const ip3 = document.getElementById('ip3').value;
+            const img = document.getElementById('img').value;
+
+            const namerelative1 = document.getElementById('namerelative1').value;
+            const aliasrelative1 = document.getElementById('aliasrelative1').value;
+            const dobrelative1 = document.getElementById('dobrelative1').value;
+            const agerelative1 = document.getElementById('agerelative1').value;
+            const ssnrelative1 = document.getElementById('ssnrelative1').value;
+            const dlnrelative1 = document.getElementById('dlnrelative1').value;
+            const sexrelative1 = document.getElementById('sexrelative1').value;
+            const racerelative1 = document.getElementById('racerelative1').value;
+            const heightrelative1 = document.getElementById('heightrelative1').value;
+            const weightrelative1 = document.getElementById('weightrelative1').value;
+            const addressrelative1 = document.getElementById('addressrelative1').value;
+            const oldaddressrelative1 = document.getElementById('oldaddressrelative1').value;
+            const oldaddress2relative1 = document.getElementById('oldaddress2relative1').value;
+            const oldaddress3relative1 = document.getElementById('oldaddress3relative1').value;
+            const emailrelative1 = document.getElementById('emailrelative1').value;
+            const phonerelative1 = document.getElementById('phonerelative1').value;
+            const iprelative1 = document.getElementById('iprelative1').value;
+            const ip2relative1 = document.getElementById('ip2relative1').value;
+            const ip3relative1 = document.getElementById('ip3relative1').value;
+            const imgrelative1 = document.getElementById('imgrelative1').value;
+
+            const namerelative2 = document.getElementById('namerelative2').value;
+            const aliasrelative2 = document.getElementById('aliasrelative2').value;
+            const dobrelative2 = document.getElementById('dobrelative2').value;
+            const agerelative2 = document.getElementById('agerelative2').value;
+            const ssnrelative2 = document.getElementById('ssnrelative2').value;
+            const dlnrelative2 = document.getElementById('dlnrelative2').value;
+            const sexrelative2 = document.getElementById('sexrelative2').value;
+            const racerelative2 = document.getElementById('racerelative2').value;
+            const heightrelative2 = document.getElementById('heightrelative2').value;
+            const weightrelative2 = document.getElementById('weightrelative2').value;
+            const addressrelative2 = document.getElementById('addressrelative2').value;
+            const oldaddressrelative2 = document.getElementById('oldaddressrelative2').value;
+            const oldaddress2relative2 = document.getElementById('oldaddress2relative2').value;
+            const oldaddress3relative2 = document.getElementById('oldaddress3relative2').value;
+            const emailrelative2 = document.getElementById('emailrelative2').value;
+            const phonerelative2 = document.getElementById('phonerelative2').value;
+            const iprelative2 = document.getElementById('iprelative2').value;
+            const ip2relative2 = document.getElementById('ip2relative2').value;
+            const ip3relative2 = document.getElementById('ip3relative2').value;
+            const imgrelative2 = document.getElementById('imgrelative2').value;
+
+
+            const insta = document.getElementById('insta').value;
+            const facebook = document.getElementById('facebook').value;
+            const twitter = document.getElementById('twitter').value;
+            const discord = document.getElementById('discord').value;
+
+            const credits = document.getElementById('credits').value;
+
+
+            const asciiArt = `
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⣤⢤⡤⣤⠤⣔⡲⡔⢦⣒⠦⡤⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⢻⢥⣛⡜⢮⣼⢲⣙⢦⢳⡹⢲⡍⣞⡱⢫⡜⣝⡢⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⡿⢣⣿⢾⡱⢮⣽⢧⢣⢏⣾⢣⡝⣣⠞⣥⢏⣳⢚⣬⠳⣍⠶⣩⠦⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⡿⣫⣾⣽⣿⠟⡦⢽⣾⣏⢮⡓⢮⢞⡗⣮⢱⡛⢦⣋⣖⢫⠖⡽⢬⡓⢧⡛⡼⣡⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⡀⠁⠀⠈⡐⠈⠀⠀⠀⠀⠀⢀⣼⣿⡿⣱⣿⣿⣿⢏⡞⣭⣿⣿⢚⢦⣋⠗⣮⣿⣜⡣⣝⢣⡳⢬⡳⣋⢾⡥⢫⠧⣝⢲⢣⡝⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠂⠀⢠⠀⠀⠀⠃⠀⠈⠀⠀⠀⢠⣿⣿⡿⣱⡿⣿⣿⡟⡼⣘⣾⣿⣯⡙⣶⡏⡞⢦⠽⣧⣓⢎⡧⣝⢣⡳⠽⣞⢯⢣⣛⡬⣓⢯⡜⡜⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⠀⠀⢠⣿⣿⣿⣳⣿⣿⣎⡻⣸⡱⢻⡟⠁⡧⡝⡏⣷⣙⢮⣙⣿⣎⡷⢞⡬⢧⣙⢧⣋⢿⣷⡘⠶⣍⠾⣝⡼⡸⠄⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⡄⠀⠀⡄⠀⠀⠀⠀⠀⠀⠁⠀⣾⣿⣿⣷⣿⣿⣿⣿⢣⢎⡺⠋⠀⠇⡷⣙⢃⢺⡱⢎⡞⡼⣧⣳⠈⢺⡱⢎⡶⣩⠶⣹⡭⣛⢬⡛⣼⠶⣹⢹⡀⠀⠀⠀⠀⠀⠀⠀
+⢀⠂⠀⠀⠀⠀⠠⠀⠀⠀⡀⠀⠀⠘⣰⣿⣿⢿⣿⣿⠻⣿⡟⡜⢮⠋⠀⠀⠈⡷⣹⠀⢀⢏⠷⣸⡱⢿⣏⡀⠀⠹⣇⡞⣥⢛⡴⣏⠳⣎⡵⢎⣷⢣⢧⢣⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠁⠀⠀⢃⠀⠀⠀⡇⠀⠀⠀⢹⣿⣿⣿⣿⣿⣷⣄⡙⠭⡇⠀⠁⠄⠀⢱⣹⠀⠀⠨⣯⠵⣩⢛⣯⡇⠀⠀⠙⢜⠶⣩⠶⣩⢗⡣⢞⣱⢚⡧⡞⣭⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡃⠀⠀⡤⠀⠀⠀⢇⠀⠀⠀⠈⣿⣿⣿⣷⣿⣿⣿⠜⡕⠀⠀⠀⠀⠀⠂⣿⡀⠀⠀⠀⠻⡥⣋⢿⡅⢠⠠⠂⠈⢛⠦⣏⠵⣪⠝⣮⣱⢋⣷⣙⠖⣆⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡇⠀⠀⠸⠂⠀⠀⠉⠀⠀⠀⠀⢼⣿⣿⣾⣿⣿⣿⡞⡇⠀⠀⢀⣀⣤⣄⠸⡌⠀⠀⠀⠀⠘⢭⢖⣇⠀⣀⣠⣀⡈⠳⣎⢻⡥⣛⣼⡣⢏⣼⣹⡞⣱⣄⠀⠀⠀⠀⠀
+⠀⠀⠐⠰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠸⣿⣿⣿⣿⣿⣷⡿⠀⢠⣾⠟⢋⣭⣟⣆⠁⠀⠀⠀⠀⠀⠀⠙⢼⢰⣟⣯⣛⠻⢷⣽⣙⡶⢣⣾⣏⠳⣼⡇⣟⡴⢫⢦⠀⠀⠀⠀
+⠀⠀⠀⠀  Violate⠀⠀⠁⠀⠉⠿⠿⢿⣿⣻⣿⡇⡿⠁⢠⣿⣽⣤⣦⠀⠀⠀⠀⠀⠀⠀⠀ ⢸⣿⣿⣧⣧⠈⣿⠙⣽⢣⣿⣿⡳⣜⠯⣵⢺⡟⠚⢵⢠⡀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⠠⠀⠀⠀⠀⠃⢀⠀⠀⠀⠀⢹⣿⣿⣷⠀⠘⠅⢸⣿⣿⢿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣿⣿⣿⡿⠀⠏⠰⣹⢾⡟⢿⣿⣎⡟⡼⣇⢿⠀⠀⠀⠉⠉
+⠀⠀⠀⠀⡀⠄⠀⠀⠀⠀⠀⡀⢀⢀⠐⠀⠀⠀⠀⣼⡿⣸⢻⣧⠀⠀⠂⡣⣦⠾⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠾⠴⠾⠁⠀⠀⠀⡝⣾⢭⢻⣿⡜⣣⣝⡷⣊⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠀⠐⠁⠰⠀⠀⠀⢀⣿⡱⢣⢏⡞⣣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⡧⢎⡳⣿⠼⡱⢎⡷⣩⢶⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠀⠀⠀⠀⠀⠀⠀⠀⢸⣷⢭⡓⡞⡼⣕⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡟⣗⡫⣕⣻⢭⠳⣭⣿⣱⢺⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣷⣯⣼⣵⢎⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣵⣿⣇⡗⣎⢾⣍⠳⣖⣿⡧⢻⠀⠀⠀⠀
+⠀⢢⠀⠀⠀⠀⠀⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣷⣞⣢⠀⠀⠀⠀⠀⠀⠔⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⡗⡼⣊⢶⢪⢽⣞⣿⣓⣻⠀⠀⠀⠀
+⠀⠀⠣⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣟⣿⣱⠳⣍⢮⡓⢾⣿⡿⣒⠇⠀⠀⠀⠀
+⠀⠀⢠⣆⠀⠀⠀⠀⠀⠀⠀⢀⡀⢀⠀⠔⠁⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣀⢄⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⣴⣶⣿⣿⡿⣿⣿⣿⢔⡻⣜⢲⡙⢾⠟⢧⣹⠀⠀⠀⠀⠀
+⠀⠀⠸⣿⡇⠤⠭⠀⠀⠁⠉⠁⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⠒⢁⠀⠄⠀⢠⠐⠀⠀⢿⣿⣿⢿⡿⠁⣿⣿⣏⠮⣕⢎⢧⡻⡏⠀⢮⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⢹⣿⡀⠐⡀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠐⠤⠀⠁⠀⠀⠱⠈⣿⣿⡟⠁⠀⣹⣿⢥⡛⡜⣎⢾⢳⠀⠀⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣿⣿⠀⠣⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⣈⠔⠀⢠⣿⣿⣿⣦⠀⣿⡟⢦⣹⠕⠁⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢹⣿⡀⠀⠈⠠⢀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⣠⣆⠥⡀⠀⢸⣿⣿⣿⣿⣿⣤⠛⠊⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⣷⡀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠏⡖⡡⢯⡢⡌⣿⣿⣿⣿⣿⣿⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠘⣿⣿⣶⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⡼⡁⣿⡄⣷⡹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠐⣻⠐⣿⣿⡌⢷⡘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢨⡇⠎⡿⡿⣗⢨⢁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⠿⠿⠿⠿⠿⠻⠟⠿⠟⠿⠟⠿⠿⠻⠿⠟⠿⠿⠻⠿⠟⠿⠿⠇⠘⠤⠇⠏⠜⠆⠣⠿⠻⠟⠿⠻⠟⠿⠻⠟⠿⠇
+
+
+╔═══╦═══════════════════════╦═══╦════════════════════════════════════════╦═════════╗
+║░░░║        Reason         ║ + ║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║ Violate ║ 
+╚═══╩═══════════════════════╩═══╩════════════════════════════════════════╩═════════╝
+
+${description.padEnd(80)}
+
+╔═══╦═══════════════════════╦═══╦════════════════════════════════════════╦═════════╗
+║░░░║  PERSONAL INFORMATION ║ + ║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║ Violate ║ 
+╚═══╩═══════════════════════╩═══╩════════════════════════════════════════╩═════════╝
+
+Name ................ ${name.padEnd(80)}
+Known as ............ ${alias.padEnd(80)}
+Date of Birth ....... ${dob.padEnd(80)}
+Age ................. ${age.padEnd(80)}
+SSN ................. ${ssn.padEnd(80)}
+DLN ................. ${dln.padEnd(80)}
+Gender .............. ${sex.padEnd(80)}
+Race ................ ${race.padEnd(80)}
+Height .............. ${height.padEnd(80)}
+Weight .............. ${weight.padEnd(80)}
+
+Current address ..... ${address.padEnd(82)}
+
+Previous addresses .. ${oldaddress.padEnd(82)}
+                      ${oldaddress2.padEnd(82)}
+                      ${oldaddress3.padEnd(82)}
+
+Email address(es) ... ${email.padEnd(82)}
+
+Phone number(s) ..... ${phone.padEnd(82)}
+
+IP Address(es) ...... ${ip.padEnd(80)}
+                      ${ip2.padEnd(80)}
+                      ${ip3.padEnd(80)}
+
+Selfies ............. ${img.padEnd(80)}
+
+╔═══╦═══════════════════════╦═══╦════════════════════════════════════════╦═════════╗
+║░░░║       RELATIVES       ║ + ║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║ Violate ║ 
+╚═══╩═══════════════════════╩═══╩════════════════════════════════════════╩═════════╝
+relative1
+Name ................ ${namerelative1.padEnd(80)}
+Known as ............ ${aliasrelative1.padEnd(80)}
+Date of Birth ....... ${dobrelative1.padEnd(80)}
+Age ................. ${agerelative1.padEnd(80)}
+SSN ................. ${ssnrelative1.padEnd(80)}
+DLN ................. ${dlnrelative1.padEnd(80)}
+Gender .............. ${sexrelative1.padEnd(80)}
+Race ................ ${racerelative1.padEnd(80)}
+Height .............. ${heightrelative1.padEnd(80)}
+Weight .............. ${weightrelative1.padEnd(80)}
+
+Current address ..... ${addressrelative1.padEnd(82)}
+
+Previous addresses .. ${oldaddressrelative1.padEnd(82)}
+                      ${oldaddress2relative1.padEnd(82)}
+                      ${oldaddress3relative1.padEnd(82)}
+
+Email address(es) ... ${emailrelative1.padEnd(82)}
+
+Phone number(s) ..... ${phonerelative1.padEnd(82)}
+
+IP Address(es) ...... ${iprelative1.padEnd(80)}
+                      ${ip2relative1.padEnd(80)}
+                      ${ip3relative1.padEnd(80)}
+
+Selfies ............. ${imgrelative1.padEnd(80)}
+
+
+╔═══╦═══════════════════════╦═══╦════════════════════════════════════════╦═════════╗
+║░░░║       RELATIVES       ║ + ║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║ Violate ║ 
+╚═══╩═══════════════════════╩═══╩════════════════════════════════════════╩═════════╝
+
+Name ................ ${namerelative2.padEnd(80)}
+Known as ............ ${aliasrelative2.padEnd(80)}
+Date of Birth ....... ${dobrelative2.padEnd(80)}
+Age ................. ${agerelative2.padEnd(80)}
+SSN ................. ${ssnrelative2.padEnd(80)}
+DLN ................. ${dlnrelative2.padEnd(80)}
+Gender .............. ${sexrelative2.padEnd(80)}
+Race ................ ${racerelative2.padEnd(80)}
+Height .............. ${heightrelative2.padEnd(80)}
+Weight .............. ${weightrelative2.padEnd(80)}
+
+Current address ..... ${addressrelative2.padEnd(82)}
+
+Previous addresses .. ${oldaddressrelative2.padEnd(82)}
+                      ${oldaddress2relative2.padEnd(82)}
+                      ${oldaddress3relative2.padEnd(82)}
+
+Email address(es) ... ${emailrelative2.padEnd(82)}
+
+Phone number(s) ..... ${phonerelative2.padEnd(82)}
+
+IP Address(es) ...... ${iprelative2.padEnd(80)}
+                      ${ip2relative2.padEnd(80)}
+                      ${ip3relative2.padEnd(80)}
+
+Selfies ............. ${imgrelative2.padEnd(80)}
+
+╔═══╦═══════════════════════╦═══╦════════════════════════════════════════╦═════════╗
+║░░░║       SOCIALS         ║ + ║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║ Violate ║ 
+╚═══╩═══════════════════════╩═══╩════════════════════════════════════════╩═════════╝
+
+Instagram ........... ${insta.padEnd(80)}
+Facebook ............ ${facebook.padEnd(80)}
+Twitter ............. ${twitter.padEnd(80)}
+Discord ............. ${discord.padEnd(80)}
+
+╔═══╦═══════════════════════╦═══╦════════════════════════════════════════╦═════════╗
+║░░░║       CREDITS         ║ + ║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║ Violate ║ 
+╚═══╩═══════════════════════╩═══╩════════════════════════════════════════╩═════════╝
+
+${credits.padEnd(80)}
+
+╔═══╦═══════════════════════╦═══╦════════════════════════════════════════╦═════════╗
+║░░░║        The End        ║ + ║░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░║ Violate ║ 
+╚═══╩═══════════════════════╩═══╩════════════════════════════════════════╩═════════╝
+
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⠔⠁⣠⡾⠃⢐⡩⠐⡊⣵⡻⣏⢿⡹⢯⡝⣯⣛⢿⡽⣫⢻⢯⣿⡹⢯⢿⣿⣽⠀⠙⢦⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠀⣠⡾⡿⢁⣴⢟⡴⣋⣼⣳⡝⣮⢮⡝⣧⠏⣶⢹⣎⡿⣵⢫⢷⡹⣿⣭⣛⣦⣳⣷⣄⠀⢵⡄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣠⣾⠇⢀⣼⢯⡽⣵⡻⣝⢮⡳⣝⣾⣳⠽⣎⢷⡹⣎⢷⣎⠷⣮⡝⣷⢫⡞⣵⢫⣷⣯⣶⣙⡞⣿⣦⠈⠹⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⣴⠟⠁⢀⣾⣿⣹⢾⣝⡳⣝⣮⢷⣽⣷⣫⠿⡽⣎⢷⣏⣾⣿⡝⣶⡹⢾⣏⢾⡱⣏⢿⣞⡽⣻⢾⣵⣯⣷⡀⢳⠀⠀⠀
+⠀⠀⠀⠀⡐⠁⠀⢀⣾⡿⢶⣻⡾⣭⣟⡼⣮⠟⢹⣷⢫⡿⣽⢎⡿⣞⡾⢹⣟⢶⡹⣏⣟⢮⡳⣝⠾⣿⡜⣧⢻⢮⢷⣻⢷⣸⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣾⣿⢻⡽⣯⢿⡵⣻⢞⡵⢀⣾⢞⡯⣽⡞⣭⢿⣽⠇⢹⣯⢻⡷⣭⣟⡮⢷⣭⢻⣽⣿⢾⡽⣾⢷⣻⢿⣏⠀⠀⠀
+⠀⠀⠀⠀⠀⡜⣼⡿⣭⢿⣹⢯⣷⡿⠕⠉⠀⠀⣿⢞⡽⢧⠿⣜⣯⡿⠃⢫⣯⢷⡟⣞⣿⢼⡳⣎⠷⣾⣏⢾⡹⣞⣳⢯⣿⣿⠀⠀⠀      
+⠀⠀⠀⠀⣰⣿⡿⣽⣏⢾⣽⣿⢿⣿⣿⣶⣄⠀⠘⣯⡻⣭⣛⢷⠟⠀⠀⠀⢻⡾⣝⣾⣻⢮⢷⣭⢻⡼⣛⣮⣷⢿⣟⢿⣳⡿⢤⡀⠀           
+⠀⠀⢀⠜⢹⣿⣽⣳⢯⣿⡿⠉⣲⣿⣿⡟⣿⡆⠀⠙⣿⣶⣭⢿⠀⢀⡤⠀⠀⣿⣣⣿⡽⣏⡾⣎⢷⣹⢯⡷⣏⡿⣞⢯⡷⡇⠘⣟⣧           
+⠀⢠⠎⠀⣼⣟⡾⣽⣿⣿⡇⠀⣿⡿⣟⣿⡿⠀⠀⠀⠈⠉⠙⠛⠂⣾⣿⣿⣿⣾⣿⢧⡿⣽⢺⡽⣧⢻⣯⢷⡿⣹⣞⣻⡼⡇⠀⠘⣾
+⢠⠃⠀⣰⣟⣾⣽⣳⣟⡏⠻⠀⠙⠿⠿⠄⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣏⣿⢻⣿⣻⣽⣳⢏⣷⣻⣞⣯⣽⣳⣭⢷⣻⡇⠀⠀⠱
+⡎⠀⢰⣿⣹⡞⣷⢯⣾⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡹⣻⣿⣿⠀⣿⣿⣾⡽⣟⡾⣵⣻⡼⡶⣏⡾⢧⣳⢿⠀⠀⠀
+⣇⢠⣿⡷⠉⠟⠛⠻⢾⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⠯⣘⠋⠀⠛⠋⠀⠐⠾⣿⣳⢯⡷⣿⡽⣹⣏⢷⣻⠇⡀⠀
+⠻⣿⡟⠀⠀⡔⠛⠒⠒⠺⠷⣤⠀⠀⠀⠐⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡤⠈⠈⣻⡟⠉⣿⣳⣟⣳⡞⣿⡄⠙⠓⠄
+⠀⠈⠳⣀⡜⠀⠀⣠⣤⣤⡴⢺⡀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⢀⣀⠀⠀⢀⡀⠀⠀⠚⠿⠒⣺⡏⠀⣼⢿⡽⣯⡷⣽⢯⡇⠀⠀⠀
+⠀⠀⠀⠈⢆⠀⣰⣿⢿⡽⡇⠀⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⡔⠻⠄⢄⣠⡈⠉⢹⣦⣤⣴⣾⠏⠀⡔⠁⣼⡿⣹⣿⡞⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⢸⠀⠹⣌⠛⣿⠷⠀⣿⠟⡷⢄⣀⠀⢀⢀⣀⣠⡜⠀⣰⣾⣟⣿⣻⠀⠐⣿⡽⠛⠁⢀⠞⠀⣸⣟⡷⣏⣷⣻⢷⣻⠀⠀⠀
+⠀⠀⠀⠀⢸⠀⠀⠈⠳⡀⠀⣰⣷⣤⣧⣤⣬⠍⠉⠉⠀⢺⠀⠠⣿⣳⣟⠾⠃⠀⠴⠋⠀⡠⠔⠁⠀⣠⣿⢾⣹⡽⢾⡽⣯⢿⡇⠀⠀
+⠀⠀⠀⠀⠸⠀⠀⠀⠀⠙⣶⠃⠈⣿⠿⠍⠀⠀⠈⢀⣠⣼⠀⠀⠛⠋⠁⠀⢠⡀⠐⠒⠉⠀⢀⣤⣾⣿⣽⣞⡷⠿⠯⣿⡽⣯⣷⠀⠀
+⠀⠀⠀⠀⡸⠀⠀⠀⠀⢠⠃⠀⠀⡇⠑⣒⡲⠖⠛⠉⠀⢸⠀⠀⢀⣀⣀⣀⣔⠳⣔⣤⠤⠖⠛⠉⠉⠀⣀⣀⣤⣤⣴⣿⢻⣷⣻⡆⠀
+⠀⠀⠀⠀⠃⠀⠀⠀⣠⠃⠀⠀⡔⠛⠋⢣⠀⠀⠀⠀⠀⣸⢀⠖⠉⠀⠀⠀⠉⠉⠉⠙⠀⣀⣤⣶⢾⣟⡿⣽⡯⣷⣻⣼⣻⢞⡷⣿⡀
+⠀⠀⠀⠀⠀⠀⢀⣾⠏⠀⢀⡎⠀⢀⡀⠈⡆⠀⠀⠀⢀⢿⠁⠀⠀⠀⠀⠀⠀⣀⣤⣶⢿⣻⢿⢮⡷⣞⡽⣞⣿⣵⣻⢶⢯⣻⣽⣳⣧
+⠀⠀⠀⠀⠀⠀⡹⠋⠀⠔⢹⠉⠈⠉⠚⣊⣅⠀⢀⣰⠃⠘⡄⠀⠀⠀⢀⡔⢿⣿⢿⣞⣯⣽⢻⣿⣞⡽⣞⡽⣻⡶⣏⡿⣏⣷⣳⢯⣟
+⠀⠀⠀⠀⠀⠊⠀⠀⠀⠀⠈⠀⠀⠀⠠⠁⠘⣤⡺⠃⠀⣠⢳⡀⠀⠀⠀⢇⠈⠙⢆⠹⣷⢯⣟⢾⣻⡾⣭⣻⢽⣻⣳⡽⣛⣮⢷⣻⣞
+⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⢀⡜⠁⠀⠀⢫⠉⠳⢤⣄⠤⠘⣦⠀⠘⢷⣿⣻⣞⣯⢷⣻⢷⣯⣳⢯⣷⣹⣻⡼⣛⣦⡙
+`;
+
+            document.getElementById('asciiOutput').textContent = asciiArt;
+        }
+    </script>
+</body>
+</html>
