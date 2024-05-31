@@ -3,10 +3,190 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Profile page for Careful, featuring social media links and contact information.">
+    <meta name="keywords" content="Careful, profile, social media, contact">
+    <title>Careful</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .profile-container {
+            text-align: center;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #1e1e1e;
+            width: 90%;
+            max-width: 450px;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #000000;
+        }
+
+        .name {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        .bio {
+            font-size: 16px;
+            color: #aaaaaa;
+            margin-bottom: 20px;
+            border-right: 2px solid #aaaaaa;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 4s steps(30, end) forwards, blink-caret 0.75s step-end 4s 4, caret-fade-out 1s forwards 7s;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #aaaaaa; }
+        }
+
+        @keyframes caret-fade-out {
+            from { border-color: #aaaaaa; }
+            to { border-color: transparent; }
+        }
+
+        .socials {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+
+
+        .social-icon img {
+    width: 54px;
+    height: 54px;
+    transition: transform 0.3s ease; /* Added transition property */
+}
+
+.social-icon:hover img {
+    transform: scale(1.1); /* Enlarges the image by 10% on hover */
+}
+
+@media (max-width: 500px) {
+    .social-icon img {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+
+
+
+
+
+
+        .dropdown {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .dropdown h2 {
+            cursor: pointer;
+            margin: 0;
+            padding: 10px;
+            background-color: #1e1e1e;
+            border: none;
+            text-align: center;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            border-radius: 10px;
+        }
+
+        .dropdown h2:hover {
+            background-color: #333;
+        }
+
+        .dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            background-color: #1e1e1e;
+            padding: 0 15px;
+            border-radius: 10px;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+
+        .dropdown-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown-content li {
+            margin-bottom: 10px;
+        }
+
+        .dropdown-content a {
+            color: #00c3ff;
+            text-decoration: none;
+        }
+
+        .dropdown-content a:hover {
+            text-decoration: underline;
+        }
+
+        .dropdown-content.open {
+            max-height: 200px; /* Adjust as needed for the content height */
+            padding: 15px;
+        }
+        
+    </style>
 </head>
-<body style="background-color: black; color: white;">
-    Hello if you want to get your own formating tool with your own format pay careful
-    <a href="https://guns.lol/carefull" style="color: #00ccff;">guns.lol  XD</a>
+<body>
+    <div class="profile-container">
+        <div class="profile">
+            <img src="american.jpg" alt="Profile Picture of Careful" class="profile-pic">
+            <h1 class="name">Careful</h1>
+            <p class="bio">be careful</p>
+        </div>
+        <div class="socials">
+            <a target="_blank" href="mailto:careful@cock.li" class="social-icon" aria-label="Email"><img src="bird.png" alt="Email Icon"></a>
+            <a target="_blank" href="https://x.com/carefulbin" class="social-icon" aria-label="Twitter"><img src="Twitter.png" alt="Twitter Icon"></a>
+            <a target="_blank" href="https://t.me/jewsclub" class="social-icon" aria-label="Telegram"><img src="Telegram.png" alt="Telegram Icon"></a>
+            <a target="_blank" href="https://discord.gg/JXBqubsFrH" class="social-icon" aria-label="Discord"><img src="discord.png" alt="Discord Icon"></a>
+            <a target="_blank" href="https://doxbin.com/user/careful" class="social-icon" aria-label="Doxbin"><img src="doxbin.png" alt="Doxbin Icon"></a>
+            <a target="_blank" href="https://breachforums.st/User-careful" class="social-icon" aria-label="Breach Forums"><img src="BreachForums.png" alt="BreachForums Icon"></a>
+        </div>
+        <div class="dropdown">
+            <h2 onclick="toggleDropdown()">More</h2>
+            <div class="dropdown-content">
+                <ul>
+                    <li><a href="tutorial1.html">How to dox</a></li>
+                    <li><a href="service.html">service</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDropdown() {
+            var content = document.querySelector('.dropdown-content');
+            content.classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
