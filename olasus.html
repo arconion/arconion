@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page with Autoplaying Music</title>
+    <link rel="icon" type="image/png" href="olapsus.jpg">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            width: 500px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .profile-picture {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%; /* Start from the middle of the banner */
+            left: 50%;
+            transform: translate(-50%, -30%);
+            border: 5px solid #1e1e1e;
+        }
+        .banner {
+            margin-bottom: 50px; /* Adjust to provide space for overlapping profile picture */
+        }
+        .banner img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .social-media {
+            margin-top: 20px;
+        }
+        .social-media table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .social-media th, .social-media td {
+            padding: 10px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+        .social-media a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .social-media a:hover {
+            text-decoration: underline;
+        }
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <img src="banner_olapsus.webp" alt="Banner Picture">
+        </div>
+        <div>
+            <img src="olapsus.jpg" alt="Profile Picture" class="profile-picture">
+        </div>
+        <b style="float: left;">Olapsus</b><a href="https://www.youtube.com/watch?v=YIHoU6B5j0I" style="text-decoration: none;"><b style="float: right; text-decoration: none;">Video</b></a>
+        <br>
+        <br>
+        <br>
+        <div class="social-media">
+            <table>
+                <tr>
+                    <th>Platform</th>
+                    <th>Link</th>
+                </tr>
+                <tr>
+                    <td>Discord</td>
+                    <td><a href="https://discord.com/users/1232819408158724148" target="_blank">@hmm_not_me</a></td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td><a href="https://x.com/hmm_not_me" target="_blank">@hmm_not_me</a></td>
+                </tr>
+                <tr>
+                    <td>Instagram</td>
+                    <td><a href="https://www.instagram.com/hmm_not_me" target="_blank">@hmm_not_me</a></td>
+                </tr>
+                <tr>
+                    <td>Doxbin</td>
+                    <td><a href="https://doxbin.net/user/hmm_not_me" target="_blank">@hmm_not_me</a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
