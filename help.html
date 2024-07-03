@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vont</title>
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #1e1e1e;
+            color: #c5c6c7;
+            font-family: 'Courier New', Courier, monospace;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
+        }
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #323232;
+            padding: 10px 20px;
+            box-sizing: border-box; /* Ensure padding does not increase width */
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar .logo span {
+            font-size: 1.5em;
+        }
+        .navbar .buttons {
+            display: flex;
+        }
+        .navbar .buttons button {
+            background-color: #1e1e1e;
+            color: #c5c6c7;
+            border: 1px solid #c5c6c7;
+            margin-left: 10px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        .navbar .buttons button:hover {
+            background-color: #c5c6c7;
+            color: #1e1e1e;
+        }
+        .header {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .header a {
+            color: #c5c6c7;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 0px solid #c5c6c7;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #323232;
+        }
+        tr:nth-child(even) {
+            background-color: #2e2e2e;
+        }
+        pre {
+            white-space: pre-wrap; /* Ensures the content wraps inside the table cell */
+        }
+        a {
+            color: #c5c6c7;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+            <span>Auto Formatter vont</span>
+        </div>
+        <div class="buttons">
+            <button onclick="window.location.href='tool.html'">Tool</button>
+            <button onclick="window.location.href='help.html'">Help</button>
+            <button onclick="window.location.href='vont.html'">Profile</button>
+        </div>
+    </div>
+
+    <div class="header">
+        <h1>Auto Formatter - vont</h1>
+        <p>+rep <a href="https://doxbin.com/user/vont">https://doxbin.com/user/vont</a></p>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>What you type</th>
+                <th>What gets displayed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    eample<br>
+                    ---<br>
+                    eample
+                </td>
+                <td>
+                    ╔════════╗<br>
+                    ║ eample ║<br>
+                    ╚════════╝<br>
+                    <br>
+                    ╔════════╗<br>
+                    ║ eample ║<br>
+                    ╚════════╝
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    ##example
+                </td>
+                <td>
+                    <pre>
+█▀▀ ▀▄▀ ▄▀█ █▀▄▀█ █▀█ █░░ █▀▀
+██▄ █░█ █▀█ █░▀░█ █▀▀ █▄▄ ██▄
+                    </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    example;example
+                </td>
+                <td>
+                    example&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;;&nbsp;example
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    media hosting
+                </td>
+                <td>
+                    <a target="_blank" href="https://files.offshore.cat/">https://files.offshore.cat/</a><br>
+                    <a target="_blank" href="https://imageup.ru/">https://imageup.ru/</a><br>
+                    <a target="_blank" href="https://imgbb.com/">https://imgbb.com/</a><br>
+                    <a target="_blank" href="https://pomf2.lain.la/">https://pomf2.lain.la/</a><br>
+                    <a target="_blank" href="https://giphy.com/upload">https://giphy.com/upload</a><br>
+                    <a target="_blank" href="https://imgur.com/upload">https://imgur.com/upload</a><br>
+                    <a target="_blank" href="https://tenor.com/">https://tenor.com/</a><br>
+                    <a target="_blank" href="https://postimages.org/">https://postimages.org/</a><br>
+                    <a target="_blank" href="https://catbox.moe/">https://catbox.moe/</a><br>
+                    <a></a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

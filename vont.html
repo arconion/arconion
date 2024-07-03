@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vont</title>
+    <script disable-devtool-auto src='https://cdn.jsdelivr.net/npm/disable-devtool'></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #1e1e1e;
+            color: #c5c6c7;
+            font-family: 'Courier New', Courier, monospace;
+            align-items: center;
+            justify-content: flex-start;
+            overflow-x: hidden; /* Prevent horizontal scrollbar */
+        }
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #323232;
+            padding: 10px 20px;
+            box-sizing: border-box; /* Ensure padding does not increase width */
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .navbar .logo span {
+            font-size: 1.5em;
+        }
+        .navbar .buttons {
+            display: flex;
+        }
+        .navbar .buttons button {
+            background-color: #1e1e1e;
+            color: #c5c6c7;
+            border: 1px solid #c5c6c7;
+            margin-left: 10px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+        .navbar .buttons button:hover {
+            background-color: #c5c6c7;
+            color: #1e1e1e;
+        }
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            text-align: center;
+        }
+        .profile-container img {
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        .profile-container a {
+            color: #c5c6c7;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .profile-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+            <span>Auto Formatter vont</span>
+        </div>
+        <div class="buttons">
+            <button onclick="window.location.href='tool.html'">Tool</button>
+            <button onclick="window.location.href='help.html'">Help</button>
+            <button onclick="window.location.href='vont.html'">Profile</button>
+        </div>
+    </div>
+
+    <div class="profile-container">
+        <h1>vont</h1>
+        <img src="logo.jpg" alt="Logo">
+        <a href="https://discord.gg/jcSgaK9M" target="_blank">Discord 1</a>
+        <a href="https://discord.gg/hN69xh36" target="_blank">Discord 2</a>
+        <p>+ rep <a href="https://doxbin.com/user/vont" target="_blank">user/vont</a></p>
+    </div>
+</body>
+</html>
