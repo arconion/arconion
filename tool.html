@@ -214,7 +214,11 @@
             const borderLength = maxLength + 4;
             let formattedText = '╔'.padEnd(borderLength, '═') + '╗\n';
             formattedLines.forEach(line => {
-                formattedText += '║ ' + line.padEnd(maxLength) + '  ║\n';
+                if (line === '-') {
+                    formattedText += '╠'.padEnd(borderLength, '═') + '╣\n';
+                } else {
+                    formattedText += '║ ' + line.padEnd(maxLength) + '  ║\n';
+                }
             });
             formattedText += '╚'.padEnd(borderLength, '═') + '╝';
 
