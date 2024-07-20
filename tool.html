@@ -118,6 +118,7 @@
             <option value="single">Single Line</option>
             <option value="double">Double Line</option>
             <option value="rounded">Rounded</option>
+            <option value="normal">Normal</option>
             <option value="none">No Border</option>
         </select>
     </div>
@@ -300,6 +301,12 @@
                     bottomLeft: '╰', bottomRight: '╯',
                     horizontal: '─', vertical: '│',
                     midLeft: '├', midRight: '┤'
+                },
+                normal: {
+                    topLeft: '+', topRight: '+',
+                    bottomLeft: '+', bottomRight: '+',
+                    horizontal: '-', vertical: '|',
+                    midLeft: '+', midRight: '+'
                 }
             };
             return boxStyles[boxType];
