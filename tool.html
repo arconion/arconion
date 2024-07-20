@@ -90,6 +90,9 @@
         a:hover {
             text-decoration: underline;
         }
+        .dropdown {
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -106,8 +109,17 @@
     </div>
     <div class="header">
         <h1>Auto Formatter vont</h1>
-        <a href="https://discord.gg/hN69xh36">Discord server</a>
-        <p>+rep <a href="https://doxbin.com/user/vont">https://doxbin.com/user/vont</a></p>
+        <a href="https://t.me/courpz">t.me/courpz</a>
+        <p>+rep <a href="https://doxbin.com/user/vont">doxbin.com/user/vont</a></p>
+    </div>
+    <div class="dropdown">
+        <label for="boxType">Select Box Type:</label>
+        <select id="boxType">
+            <option value="single">Single Line</option>
+            <option value="double">Double Line</option>
+            <option value="rounded">Rounded</option>
+            <option value="none">No Border</option>
+        </select>
     </div>
     <div class="container">
         <div class="input">
@@ -167,6 +179,7 @@
             const formattedTextArray = [];
             let isInBox = false;
             let currentBoxLines = [];
+            let arrowCount = 0;
 
             lines.forEach(line => {
                 if (line.trim() === '---') {
@@ -177,6 +190,23 @@
                     isInBox = false;
                 } else if (line.startsWith('##')) {
                     formattedTextArray.push(convertToAsciiArt(line.slice(2).trim()));
+                } else if (line.startsWith('<')) {
+                    const arrowText = line.slice(1).trim();
+                    arrowCount++;
+                    // Process the arrow text as part of the current box
+                    if (isInBox) {
+                        currentBoxLines.push(getArrowLine(arrowCount, arrowText));
+                    } else {
+                        formattedTextArray.push(getArrowLine(arrowCount, arrowText));
+                    }
+                } else if (line.startsWith('>')) {
+                    const arrowText = line.slice(1).trim();
+                    if (isInBox) {
+                        currentBoxLines.push(getArrowLine(arrowCount, arrowText, true));
+                    } else {
+                        formattedTextArray.push(getArrowLine(arrowCount, arrowText, true));
+                    }
+                    arrowCount = 0;
                 } else {
                     if (!isInBox) {
                         isInBox = true;
@@ -190,14 +220,35 @@
             }
 
             formattedTextArray.push("format by https://doxbin.com/user/vont");
-            return formattedTextArray.join('\n\n');
+            return formattedTextArray.join('\n');
+        }
+
+        function getArrowLine(count, text, isEnd = false) {
+            let arrowLine;
+            switch (count) {
+                case 1:
+                    arrowLine = "└───────────────│";
+                    break;
+                case 2:
+                    arrowLine = "                └──│";
+                    break;
+                default:
+                    arrowLine = "                   │";
+            }
+            if (isEnd) {
+                arrowLine = "                   └──────────────";
+            }
+            return text ? `${arrowLine} ${text}` : arrowLine;
         }
 
         function formatBox(lines) {
+            const boxType = document.getElementById('boxType').value;
             let maxLength = 0;
 
             const formattedLines = lines.map(line => {
-                if (line.trim()) {
+                if (line.trim() === '-') {
+                    return 'CUT_LINE';
+                } else if (line.trim()) {
                     const [key, value] = line.split(';').map(part => part.trim());
                     if (key && value) {
                         const formattedLine = `${key.padEnd(20)}; ${value}`;
@@ -211,18 +262,47 @@
                 return '';
             });
 
+            if (boxType === 'none') {
+                return formattedLines.join('\n');
+            }
+
+            const boxChars = getBoxChars(boxType);
             const borderLength = maxLength + 4;
-            let formattedText = '╔'.padEnd(borderLength, '═') + '╗\n';
+            let formattedText = boxChars.topLeft.padEnd(borderLength, boxChars.horizontal) + boxChars.topRight + '\n';
             formattedLines.forEach(line => {
-                if (line === '-') {
-                    formattedText += '╠'.padEnd(borderLength, '═') + '╣\n';
+                if (line === 'CUT_LINE') {
+                    formattedText += boxChars.midLeft.padEnd(borderLength, boxChars.horizontal) + boxChars.midRight + '\n';
                 } else {
-                    formattedText += '║ ' + line.padEnd(maxLength) + '  ║\n';
+                    formattedText += boxChars.vertical + ' ' + line.padEnd(maxLength) + '  ' + boxChars.vertical + '\n';
                 }
             });
-            formattedText += '╚'.padEnd(borderLength, '═') + '╝';
+            formattedText += boxChars.bottomLeft.padEnd(borderLength, boxChars.horizontal) + boxChars.bottomRight;
 
             return formattedText;
+        }
+
+        function getBoxChars(boxType) {
+            const boxStyles = {
+                single: {
+                    topLeft: '┌', topRight: '┐',
+                    bottomLeft: '└', bottomRight: '┘',
+                    horizontal: '─', vertical: '│',
+                    midLeft: '├', midRight: '┤'
+                },
+                double: {
+                    topLeft: '╔', topRight: '╗',
+                    bottomLeft: '╚', bottomRight: '╝',
+                    horizontal: '═', vertical: '║',
+                    midLeft: '╠', midRight: '╣'
+                },
+                rounded: {
+                    topLeft: '╭', topRight: '╮',
+                    bottomLeft: '╰', bottomRight: '╯',
+                    horizontal: '─', vertical: '│',
+                    midLeft: '├', midRight: '┤'
+                }
+            };
+            return boxStyles[boxType];
         }
 
         function convertToAsciiArt(text) {
