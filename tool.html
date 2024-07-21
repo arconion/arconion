@@ -180,7 +180,9 @@
             const formattedTextArray = [];
             let isInBox = false;
             let currentBoxLines = [];
-            let arrowCount = 0;
+            let singleArrowCount = 0;
+            let doubleArrowCount = 0;
+            let isDoubleArrow = false;
 
             lines.forEach(line => {
                 if (line.trim() === '---') {
@@ -191,23 +193,20 @@
                     isInBox = false;
                 } else if (line.startsWith('##')) {
                     formattedTextArray.push(convertToAsciiArt(line.slice(2).trim()));
+                } else if (line.startsWith('<<')) {
+                    isDoubleArrow = true;
+                    doubleArrowCount++;
+                    currentBoxLines.push(getDoubleArrowLine(doubleArrowCount) + line.slice(2).trim());
+                } else if (line.startsWith('>>')) {
+                    currentBoxLines.push(getDoubleArrowLine(doubleArrowCount, true));
+                    doubleArrowCount = 0;
+                    isDoubleArrow = false;
                 } else if (line.startsWith('<')) {
-                    const arrowText = line.slice(1).trim();
-                    arrowCount++;
-                    // Process the arrow text as part of the current box
-                    if (isInBox) {
-                        currentBoxLines.push(getArrowLine(arrowCount, arrowText));
-                    } else {
-                        formattedTextArray.push(getArrowLine(arrowCount, arrowText));
-                    }
+                    singleArrowCount++;
+                    currentBoxLines.push(getSingleArrowLine(singleArrowCount) + line.slice(1).trim());
                 } else if (line.startsWith('>')) {
-                    const arrowText = line.slice(1).trim();
-                    if (isInBox) {
-                        currentBoxLines.push(getArrowLine(arrowCount, arrowText, true));
-                    } else {
-                        formattedTextArray.push(getArrowLine(arrowCount, arrowText, true));
-                    }
-                    arrowCount = 0;
+                    currentBoxLines.push(getSingleArrowLine(singleArrowCount, true));
+                    singleArrowCount = 0;
                 } else {
                     if (!isInBox) {
                         isInBox = true;
@@ -224,8 +223,11 @@
             return formattedTextArray.join('\n');
         }
 
-        function getArrowLine(count, text, isEnd = false) {
+        function getSingleArrowLine(count, isEnd = false) {
             let arrowLine;
+            if (isEnd) {
+                return "                   └──────────────";
+            }
             switch (count) {
                 case 1:
                     arrowLine = "└───────────────│";
@@ -236,10 +238,25 @@
                 default:
                     arrowLine = "                   │";
             }
+            return arrowLine;
+        }
+
+        function getDoubleArrowLine(count, isEnd = false) {
+            let arrowLine;
             if (isEnd) {
-                arrowLine = "                   └──────────────";
+                return "                                    └──────────────";
             }
-            return text ? `${arrowLine} ${text}` : arrowLine;
+            switch (count) {
+                case 1:
+                    arrowLine = "                                 └──│";
+                    break;
+                case 2:
+                    arrowLine = "                                    │";
+                    break;
+                default:
+                    arrowLine = "                                    │";
+            }
+            return arrowLine;
         }
 
         function formatBox(lines) {
