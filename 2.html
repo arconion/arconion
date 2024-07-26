@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user/vont</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #1e1e1e;
+            color: #ecf0f1;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            height: 100%;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            color: #ecf0f1;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #ecf0f1;
+            font-size: 1.1em;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #555;
+        }
+
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+            width: calc(100% - 270px);
+        }
+
+        header {
+            background-color: #444;
+            color: #ecf0f1;
+            padding: 15px 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 100%;
+            max-width: 600px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #333;
+            color: #ecf0f1;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .input-group input {
+            width: 80px;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin: 5px 0;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .results {
+            background-color: #333;
+            padding: 15px;
+            border: 1px solid #555;
+            border-radius: 4px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .form-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .instructions {
+            font-size: 0.9em;
+            color: #bbb;
+            margin-top: 10px;
+        }
+
+        .format-option {
+            margin: 5px 0;
+        }
+
+        .content section {
+            padding: 20px;
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>I ❤️ Solvent abuse</h2>
+        <ul>
+            <li><a href="#" onclick="showLookup('domain')">Domain</a></li>
+            <li><a href="#" onclick="showLookup('phone')">Phone Number</a></li>
+            <li><a href="#" onclick="showLookup('email')">Email</a></li>
+            <li><a href="#" onclick="showLookup('ip')">IP</a></li>
+            <li><a href="#" onclick="showLookup('username')">Username</a></li>
+            <li><a href="#" onclick="showLookup('img')">Reverse Image</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <header>
+            <h1>+rep user/vont</h1>
+        </header>
+        <main>
+            <section id="lookup-section">
+                <h2>Lookup Information</h2>
+                <div id="lookup-form" class="form-group hidden">
+                    <label for="query">Enter your query:</label>
+                    <div id="phone-input-group" class="input-group hidden">
+                        <input type="text" id="country-code" maxlength="3" placeholder="1">
+                        <input type="text" id="phone-part1" maxlength="3" placeholder="123">
+                        <input type="text" id="phone-part2" maxlength="3" placeholder="456">
+                        <input type="text" id="phone-part3" maxlength="4" placeholder="7890">
+                    </div>
+                    <input type="text" id="query" name="query" required class="hidden">
+                    <div id="buttons" class="form-buttons">
+                    </div>
+                    <div id="instructions" class="instructions hidden">
+                    </div>
+                </div>
+                <div id="info-message" class="form-group">join the discord server <a target="_blank" style="color: #3498db;" href="https://discord.gg/xvZJ6C4yQZ">https://discord.gg/xvZJ6C4yQZ</a><br>
+                <p><a target="_blank" style="color: #3498db;" href="https://t.me/courpz">t.me/courpz</a></p><br>
+            <p>in the reverse image section your supposed to type in the image url</p></div>
+                <div id="results" class="results hidden">
+                </div>
+            </section>
+        </main>
+    </div>
+    <script>
+        const lookupUrls = {
+            domain: {
+                goDaddy: {
+                    url: 'https://uk.godaddy.com/whois/results.aspx?itc=dlp_domain_whois&domain=',
+                    format: ''
+                },
+                whoIs: {
+                    url: 'https://whois.domaintools.com/',
+                    format: ''
+                },
+                nameCheap: {
+                    url: 'https://www.namecheap.com/domains/whois/',
+                    format: ''
+                },
+                domaintools: {
+                    url: 'https://www.domaintools.com/',
+                    format: ''
+                },
+                networksolutions: {
+                    url: 'https://www.networksolutions.com/whois/index.jsp',
+                    format: ''
+                }
+            },
+            phone: {
+                whocalld: {
+                    url: 'https://whocalld.com/search?p=',
+                    format: '{area_code}-{central_office_code}-{line_number}'
+                },
+                trueCaller: {
+                    url: 'https://www.truecaller.com/search/',
+                    format: '+{country_code}{area_code}{central_office_code}{line_number}'
+                },
+                whitePages: {
+                    url: 'https://www.whitepages.com/phone/lookup/',
+                    format: '+{country_code}-{area_code}-{central_office_code}-{line_number}'
+                },
+                thatsthem: {
+                    url: 'https://thatsthem.com/phone/',
+                    format: '{area_code}-{central_office_code}-{line_number}'
+                },
+                sync: {
+                    url: 'https://sync.me/search/?number=',
+                    format: '+{country_code}{area_code}{central_office_code}{line_number}'
+                },
+                144: {
+                    url: 'https://www.411.com/phone/1-',
+                    format: '{area_code}-{central_office_code}-{line_number}'
+                }
+            },
+            email: {
+                hunter: {
+                    url: 'https://hunter.io/email-verifier?email=',
+                    format: ''
+                },
+                verifyEmail: {
+                    url: 'https://www.verifyemailaddress.org/',
+                    format: ''
+                },
+                emailListVerify: {
+                    url: 'https://www.emaillistverify.com/',
+                    format: ''
+                }
+            },
+            ip: {
+                whatismyipaddress: {
+                    url: 'https://whatismyipaddress.com/ip/',
+                    format: ''
+                },
+                dnschecker: {
+                    url: 'https://dnschecker.org/ip-location.php?ip=',
+                    format: ''
+                },
+                iplocation: {
+                    url: 'https://iplocation.io/ip/',
+                    format: ''
+                }
+            },
+            username: {
+                whatsmyname: {
+                    url: 'https://whatsmyname.app/',
+                    format: ''
+                }
+            },
+            img: {
+                google: {
+                    url: 'https://lens.google.com/uploadbyurl?url=',
+                    format: ''
+                },
+                bing: {
+                    url: 'https://www.bing.com/images/search?view=detailv2&iss=sbi&q=imgurl:',
+                    format: ''
+                },
+                tineye: {
+                    url: 'http://www.tineye.com/search/?url=',
+                    format: ''
+                },
+                yandex: {
+                    url: 'https://yandex.com/images/search?rpt=imageview&url=',
+                    format: ''
+                }
+            }
+        };
+
+        function showLookup(type) {
+            document.getElementById('lookup-form').classList.remove('hidden');
+            document.getElementById('info-message').classList.add('hidden');
+            
+            const buttonsContainer = document.getElementById('buttons');
+            buttonsContainer.innerHTML = '';
+
+            const phoneInputGroup = document.getElementById('phone-input-group');
+            const queryInput = document.getElementById('query');
+            phoneInputGroup.classList.add('hidden');
+            queryInput.classList.add('hidden');
+
+            const instructions = document.getElementById('instructions');
+
+            if (type === 'phone') {
+                phoneInputGroup.classList.remove('hidden');
+                instructions.innerHTML = 'Enter phone number in the specified format. Example: 1-123-456-7890.';
+                instructions.classList.remove('hidden');
+            } else {
+                queryInput.classList.remove('hidden');
+                instructions.classList.add('hidden');
+            }
+
+            const serviceNames = Object.keys(lookupUrls[type]);
+            serviceNames.forEach(service => {
+                const button = document.createElement('button');
+                button.textContent = service;
+                button.onclick = () => handleButtonClick(type, service);
+                buttonsContainer.appendChild(button);
+            });
+
+            document.getElementById('buttons').classList.remove('hidden');
+            document.getElementById('results').classList.add('hidden');
+        }
+
+        function formatPhoneNumber(service, countryCode, areaCode, centralOfficeCode, lineNumber) {
+            const format = lookupUrls.phone[service].format;
+            return format
+                .replace('{country_code}', countryCode)
+                .replace('{area_code}', areaCode)
+                .replace('{central_office_code}', centralOfficeCode)
+                .replace('{line_number}', lineNumber);
+        }
+
+        function handleButtonClick(type, service) {
+            let query;
+            if (type === 'phone') {
+                const countryCode = document.getElementById('country-code').value.trim();
+                const part1 = document.getElementById('phone-part1').value.trim();
+                const part2 = document.getElementById('phone-part2').value.trim();
+                const part3 = document.getElementById('phone-part3').value.trim();
+                if (countryCode.length < 1 || part1.length !== 3 || part2.length !== 3 || part3.length !== 4) {
+                    alert('Please enter a complete phone number.');
+                    return;
+                }
+                const formattedNumber = formatPhoneNumber(service, countryCode, part1, part2, part3);
+                query = encodeURIComponent(formattedNumber);
+            } else {
+                query = document.getElementById('query').value.trim();
+                if (!query && type !== 'phone') {
+                    alert('Please enter a query.');
+                    return;
+                }
+                query = encodeURIComponent(query);
+            }
+
+            const url = lookupUrls[type][service].url + query;
+            window.open(url, '_blank');
+        }
+
+        document.getElementById('info-message').classList.remove('hidden');
+    </script>
+</body>
+</html>
+
